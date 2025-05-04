@@ -21,4 +21,6 @@ A Rust crate for reading and working with subtitles — simple, clear, and gets 
 
 ## ✅ TODO
 
-- [ ]
+- [ ] Implement parsers
+- [ ] Create regex patterns
+- [ ] 
