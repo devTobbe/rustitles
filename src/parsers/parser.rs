@@ -1,7 +1,9 @@
+use std::io::Error;
+use crate::parsers::types::Subtitle;
 
-const TAG_PATTERN : String = r"<[^>]+>";
-const BRACKET_PATTERN : String = r"{[^}]+}";
+const TAG_PATTERN : &str = r"<[^>]+>";
+const BRACKET_PATTERN : &str = r"{[^}]+}";
 
 pub trait SubtitleParser {
-    fn parse(&self, input: String) -> Result<Vec<Subtitle>, Error>
+    fn parse(&self, input: &str) -> Result<Subtitle, Error>;
 }
