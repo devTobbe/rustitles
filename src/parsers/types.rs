@@ -1,3 +1,11 @@
+
+enum SubFormat {
+    SRT,
+    ASS,
+    SSA,
+    VTT
+}
+
 #[derive(Debug)]
 pub struct Caption {
     pub start: String,
