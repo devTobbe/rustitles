@@ -16,7 +16,7 @@ impl SubtitleParser for VttParser {
         let mut subs = Subtitle::new();
         let re = Regex::new(VTT_PATTERN).unwrap();
         for caps in re.captures_iter(input){
-            let caption = Caption::new(caps[1].to_string(), caps[2].to_string(), caps[3].to_string());
+            let caption = Caption::new(caps[1].to_string(), caps[2].to_string(), caps[3].trim().to_string());
             subs.captions.push(caption);
         };
         Ok(subs)
