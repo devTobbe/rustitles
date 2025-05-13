@@ -1,8 +1,9 @@
-use std::io::Error;
 use regex::Regex;
-use crate::parsers::parser::SubtitleParser;
-use crate::parsers::types::Caption;
-use crate::parsers::types::Subtitle;
+use std::io::Error;
+
+use crate::Caption;
+use crate::Subtitle;
+use crate::format::SubtitleParser;
 
 const ASS_PATTERN: &str = r"(?m)^Dialogue:\s*(?:|\w+\W)(?:Marked=\d+,\s*)?\d+,(?P<StartTime>\d+:\d+:\d+\.\d+),(?P<EndTime>\d+:\d+:\d+\.\d+),[^,]*,[^,]*,\d+,\d+,\d+,[^,]*,(?P<Content>.+)$";
 
