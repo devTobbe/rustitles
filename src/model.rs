@@ -1,8 +1,7 @@
-
 enum SubFormat {
     SRT,
     ASS,
-    VTT
+    VTT,
 }
 
 #[derive(Debug)]
@@ -14,23 +13,17 @@ pub struct Caption {
 
 #[derive(Debug)]
 pub struct Subtitle {
-    pub captions : Vec<Caption> 
+    pub captions: Vec<Caption>,
 }
 
 impl Caption {
-    pub fn new(start : String, end : String, text : String) -> Self {
-        Self {
-            start,
-            end,
-            text,
-        }
+    pub fn new(start: String, end: String, text: String) -> Self {
+        Self { start, end, text }
     }
 }
 
 impl Subtitle {
     pub fn new() -> Self {
-        Self {
-            captions: vec![],
-        }
+        Self { captions: vec![] }
     }
 }
