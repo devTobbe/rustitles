@@ -1,6 +1,7 @@
 pub mod ass;
 pub mod srt;
 pub mod vtt;
+pub mod sniff;
 
 use crate::Subtitle;
 use std::io::Error;
