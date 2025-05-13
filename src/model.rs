@@ -1,4 +1,4 @@
-enum SubFormat {
+pub enum SubFormat {
     SRT,
     ASS,
     VTT,
