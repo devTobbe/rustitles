@@ -2,7 +2,6 @@
 enum SubFormat {
     SRT,
     ASS,
-    SSA,
     VTT
 }
 
