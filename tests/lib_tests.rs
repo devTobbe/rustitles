@@ -24,8 +24,7 @@ Let's see if this works.
 Did it work..?
 ";
 
-const TESTASS: &str = r"
-[Script Info]
+const TESTASS: &str = r"[Script Info]
 Title: Example ASS Subtitle
 Original Script: Your Name
 ScriptType: v4.00+
@@ -128,20 +127,20 @@ mod tests {
             captions: vec![
                 // Caption 1 with formatting tags
                 Caption::new(
-                    "00:00:01.00".to_string(),
-                    "00:00:05.00".to_string(),
+                    "0:00:01.00".to_string(),
+                    "0:00:05.00".to_string(),
                     "{\\i1}Hello, this is a test subtitle in ASS. I am looking forward to writing this parser...".to_string(),
                 ),
                 // Caption 2 with bold formatting
                 Caption::new(
-                    "00:00:06.00".to_string(),
-                    "00:00:10.00".to_string(),
+                    "0:00:06.00".to_string(),
+                    "0:00:10.00".to_string(),
                     "{\\b1}Another line of text here with bold.".to_string(),
                 ),
                 // Caption 3 with color formatting
                 Caption::new(
-                    "00:00:12.00".to_string(),
-                    "00:00:15.00".to_string(),
+                    "0:00:12.00".to_string(),
+                    "0:00:15.00".to_string(),
                     "{\\c&HFF0000&}This is the final test line in red.".to_string(),
                 ),
             ],

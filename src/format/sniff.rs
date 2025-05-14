@@ -3,8 +3,9 @@ use regex::Regex;
 use crate::format::model::SubFormat;
 
 const SRT_SNIFF: &str = r"^\d+\r?\n\d+:\d+:\d+,\d+ --> \d+:\d+:\d+,\d+\r?\n";
-const VTT_SNIFF: &str = r"WEBVTT";
+const VTT_SNIFF: &str = r"^WEBVTT";
 const ASS_SNIFF: &str = r"^\[Script Info\]";
+
 
 pub fn sniff_format(input: &str) -> Option<SubFormat> {
     let re_srt = Regex::new(SRT_SNIFF).unwrap();
