@@ -4,14 +4,14 @@ pub enum SubFormat {
     VTT,
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct Caption {
     pub start: String,
     pub end: String,
     pub text: String,
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct Subtitle {
     pub captions: Vec<Caption>,
 }
