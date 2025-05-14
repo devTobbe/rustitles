@@ -13,7 +13,7 @@ use format::{
 
 pub mod format;
 
-pub fn prase_auto(input: &str) -> Result<Subtitle, Error> {
+pub fn parse_auto(input: &str) -> Result<Subtitle, Error> {
     match sniff_format(input) {
         Some(SubFormat::SRT) => {
             let srtprs = SrtParser;
