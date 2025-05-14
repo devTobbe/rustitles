@@ -1,6 +1,6 @@
 use regex::Regex;
 
-use crate::model::SubFormat;
+use crate::format::model::SubFormat;
 
 const SRT_SNIFF : &str = r"WEBVTT";
 const ASS_SNIFF : &str = r"^\[Script Info\]";

@@ -1,9 +1,8 @@
 mod format;
-mod model;
 
 use format::{ass::AssParser, srt::SrtParser, vtt::VttParser};
-use crate::model::{Subtitle, Caption};
 use crate::format::SubtitleParser;
+use crate::format::model::Subtitle;
 
 const TESTSRT: &str = r"
 1

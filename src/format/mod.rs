@@ -2,8 +2,9 @@ pub mod ass;
 pub mod srt;
 pub mod vtt;
 pub mod sniff;
+pub mod model;
 
-use crate::Subtitle;
+use model::Subtitle;
 use std::io::Error;
 
 const TAG_PATTERN: &str = r"<[^>]+>";
