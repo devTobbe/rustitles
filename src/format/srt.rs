@@ -1,9 +1,9 @@
 use regex::Regex;
 use std::io::Error;
 
+use crate::format::SubtitleParser;
 use crate::format::model::Caption;
 use crate::format::model::Subtitle;
-use crate::format::SubtitleParser;
 
 const SRT_PATTERN: &str = r"(?m)^\d+?\n(\d{2}:\d{2}:\d{2}[.,]\d{3})\s+-->\s+(\d{2}:\d{2}:\d{2}[.,]\d{3})(?:[^\n])*\n((?:[^\n]+\n?)+)";
 
