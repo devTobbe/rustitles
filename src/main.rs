@@ -3,8 +3,7 @@ mod format;
 use crate::format::SubtitleParser;
 use format::{ass::AssParser, srt::SrtParser, vtt::VttParser};
 
-const TESTSRT: &str = r"
-1
+const TESTSRT: &str = r"1
 00:00:01,000 --> 00:00:03,000
 Hello, welcome to the video.
 
@@ -18,8 +17,7 @@ Let's get started!
 Yiiihaaa
 ";
 
-const TESTASS: &str = r"
-[Script Info]
+const TESTASS: &str = r"[Script Info]
 Title: Sample Subtitle
 ScriptType: v4.00+
 Collisions: Normal
@@ -38,8 +36,7 @@ Dialogue: 0,0:00:05.00,0:00:08.00,Default,,0,0,0,,Second line appears now.
 Dialogue: 0,0:00:09.00,0:00:12.00,Default,,0,0,0,,Final test line.
 ";
 
-const TESTVTT: &str = r"
-WEBVTT
+const TESTVTT: &str = r"WEBVTT
 
 00:00:01.000 --> 00:00:04.000
 Hello, this is a test subtitle.

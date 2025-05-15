@@ -1,6 +1,5 @@
 // TEST STRINGS
-const TESTSRT: &str = r"
-1
+const TESTSRT: &str = r"1
 00:00:01,000 --> 00:00:04,000
 Hello, world!
 
@@ -44,8 +43,7 @@ Dialogue: 0,0:00:06.00,0:00:10.00,Default,,0,0,0,,{\b1}Another line of text here
 Dialogue: 0,0:00:12.00,0:00:15.00,Highlight,,0,0,0,,{\c&HFF0000&}This is the final test line in red.
 ";
 
-const TESTVTT: &str = r"
-WEBVTT
+const TESTVTT: &str = r"WEBVTT
 
 1
 00:00:01,000 --> 00:00:04,000
