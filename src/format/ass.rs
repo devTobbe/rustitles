@@ -12,6 +12,7 @@ pub struct AssParser;
 // TODO: Error handling
 
 impl SubtitleParser for AssParser {
+    // Parser logic for ASS files
     fn parse(&self, input: &str) -> Result<Subtitle, Error> {
         let mut subs = Subtitle::new();
 

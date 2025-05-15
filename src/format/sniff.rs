@@ -7,6 +7,7 @@ const VTT_SNIFF: &str = r"^WEBVTT";
 const ASS_SNIFF: &str = r"^\[Script Info\]";
 
 
+// Sniffs out the format of the inserted string pointer using detection regex
 pub fn sniff_format(input: &str) -> Option<SubFormat> {
     let re_srt = Regex::new(SRT_SNIFF).unwrap();
     let re_ass = Regex::new(ASS_SNIFF).unwrap();

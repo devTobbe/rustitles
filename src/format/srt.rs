@@ -11,6 +11,7 @@ pub struct SrtParser;
 
 // TODO: Error handling
 impl SubtitleParser for SrtParser {
+    // Parser logic for SRT files
     fn parse(&self, input: &str) -> Result<Subtitle, Error> {
         let mut subs = Subtitle::new();
         let re = Regex::new(SRT_PATTERN).unwrap();
