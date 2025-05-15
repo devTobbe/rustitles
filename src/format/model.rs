@@ -1,4 +1,5 @@
 // Supported Subtitle formats
+#[derive(Debug, PartialEq)]
 pub enum SubFormat {
     SRT,
     ASS,
