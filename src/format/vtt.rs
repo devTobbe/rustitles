@@ -11,6 +11,7 @@ pub struct VttParser;
 
 // TODO: Error handling
 impl SubtitleParser for VttParser {
+    // Parser logic for VTT files
     fn parse(&self, input: &str) -> Result<Subtitle, Error> {
         let mut subs = Subtitle::new();
         let re = Regex::new(VTT_PATTERN).unwrap();
