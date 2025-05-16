@@ -38,12 +38,15 @@ Dialogue: 0,0:00:09.00,0:00:12.00,Default,,0,0,0,,Final test line.
 
 const TESTVTT: &str = r"WEBVTT
 
+1
 00:00:01.000 --> 00:00:04.000
 Hello, this is a test subtitle.
 
+2
 00:00:05.000 --> 00:00:08.000
 Second line appears now.
 
+3
 00:00:09.000 --> 00:00:12.000
 Final test line.
 
