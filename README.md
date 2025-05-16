@@ -3,7 +3,7 @@ A Rust crate for reading and working with subtitles — simple, clear, and gets 
 
 ## 🚀 Features
 
-- **Supports Multiple Subtitle Formats**: Convert subtitle files in `.srt`, `.ass`, and `.ssa` formats into JSON.
+- **Supports Multiple Subtitle Formats**: Convert subtitle files in `.srt`, `.ass`, `.ssa` and `.vtt` formats into JSON.
 - **Automatic File Detection**: Automatically identifies and parses subtitle files based on their extension.
 - **Customizable Output**: Select from various output options to tailor the JSON format to your needs.
 
@@ -11,16 +11,26 @@ A Rust crate for reading and working with subtitles — simple, clear, and gets 
 
 ## 📜 Usage Instructions
 
+## 🗂️ Supported formats
 
-## 🗂️ Planned Supported formats
-
-- .srt
-- .ass
-- .ssa
-- .vtt
+- [x] .srt
+- [x] .ass
+- [x] .ssa
+- [x] .vtt
+- [ ] .sub
+- [ ] .idx
 
 ## ✅ TODO
 
-- [ ] Implement parsers
-- [ ] Create regex patterns
-- [ ] 
+### Version 1
+- [x] Implement parsers
+- [x] Create regex patterns
+- [x] Simple tests
+- [ ] Create basic library
+- [ ] Proper error handling
+
+### Version 2
+- [ ] Customizable output
+- [ ] Extend library functionality
+- [ ] More tests
+- [ ] More formats? (.sub, .idx, etc)
