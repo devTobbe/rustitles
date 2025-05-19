@@ -16,7 +16,7 @@ pub struct Caption {
     pub text: String,
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum FormatError {
     UnsupportedFormat,
     UnrecognizeableFormatting,
