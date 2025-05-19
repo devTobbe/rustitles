@@ -1,3 +1,5 @@
+use std::{error::Error, fmt::Display};
+
 // Supported Subtitle formats
 #[derive(Debug, PartialEq)]
 pub enum SubFormat {
@@ -12,6 +14,28 @@ pub struct Caption {
     pub start: String,
     pub end: String,
     pub text: String,
+}
+
+#[derive(Debug)]
+pub enum FormatError {
+    UnsupportedFormat,
+    UnrecognizeableFormatting,
+}
+
+impl Error for FormatError {}
+
+impl Display for FormatError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let message = match self {
+            Self::UnsupportedFormat => {
+                "Unsupported file format, library currently supports: srt, ass, ssa, vtt."
+            }
+            Self::UnrecognizeableFormatting => {
+                "Formatting of file is urecognizeabe, make sure that you provided a properly formatted file."
+            }
+        };
+        write!(f, "Error: {message}")
+    }
 }
 
 // Structure for a subttile, which contains a vector of Captions
