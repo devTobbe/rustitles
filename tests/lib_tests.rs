@@ -69,8 +69,14 @@ Let's see if this works.
 Did it work..?
 ";
 
+const ERRDUMMY : &str = r"
+This should just cause a lot of errors >:)
+";
+
 #[cfg(test)]
 mod tests {
+    use std::result;
+
     use rustitles::{
         format::model::{Caption, Subtitle},
         parse_auto,
@@ -187,6 +193,12 @@ mod tests {
 
         let result = parse_auto(&TESTVTT).unwrap();
         assert_eq!(result, sub);
+    }
+
+    #[test]
+    #[should_panic]
+    fn wrong_format_panic() {
+       let _ = parse_auto(&ERRDUMMY);
     }
 
 }
