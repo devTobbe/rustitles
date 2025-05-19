@@ -1,6 +1,7 @@
 use regex::Regex;
 
 use crate::format::model::SubFormat;
+use crate::format::model::FormatError;
 
 const SRT_SNIFF: &str = r"^\d+\r?\n\d+:\d+:\d+,\d+ --> \d+:\d+:\d+,\d+\r?\n";
 const VTT_SNIFF: &str = r"^WEBVTT";
@@ -8,21 +9,21 @@ const ASS_SNIFF: &str = r"^\[Script Info\]";
 
 
 // Sniffs out the format of the inserted string pointer using detection regex
-pub fn sniff_format(input: &str) -> Option<SubFormat> {
+pub fn sniff_format(input: &str) -> Result<SubFormat, FormatError> {
     let re_srt = Regex::new(SRT_SNIFF).unwrap();
     let re_ass = Regex::new(ASS_SNIFF).unwrap();
     let re_vtt = Regex::new(VTT_SNIFF).unwrap();
 
-    //VTT has to be first I think. This is horrible.
+    //VTT has to be first I think. This is horrible. Goblin ah programming
     if re_vtt.is_match(input) {
-        return Some(SubFormat::VTT);
+        return Ok(SubFormat::VTT);
     };
     if re_ass.is_match(input) {
-        return Some(SubFormat::ASS);
+        return Ok(SubFormat::ASS);
     };
     if re_srt.is_match(input) {
-        return Some(SubFormat::SRT);
+        return Ok(SubFormat::SRT);
     };
 
-    return None;
+    return Err(FormatError::UnsupportedFormat);
 }
