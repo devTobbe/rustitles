@@ -5,13 +5,16 @@ use std::io::Error;
 use format::{
     SubtitleParser,
     ass::AssParser,
-    model::{SubFormat, Subtitle},
-    sniff::sniff_format,
     srt::SrtParser,
     vtt::VttParser,
 };
 
+
+// Public modules
 pub mod format;
+
+// Re-export for cleaner API
+pub use format::{SubFormat, Subtitle, Caption, sniff_format};
 
 /// Automatically detects the format of the file and returns a Result with 
 /// a Subtitle structure or an error.
