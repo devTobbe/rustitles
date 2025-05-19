@@ -1,10 +1,12 @@
 pub mod ass;
+pub mod model;
+pub mod sniff;
 pub mod srt;
 pub mod vtt;
-pub mod sniff;
-pub mod model;
 
-use model::Subtitle;
+pub use self::model::{SubFormat, Subtitle, Caption};
+pub use self::sniff::sniff_format;
+
 use std::io::Error;
 
 // TODO: Add these to clean subtitles later on... Maybe?
