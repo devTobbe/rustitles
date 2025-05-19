@@ -18,7 +18,7 @@ impl SubtitleParser for VttParser {
         let re = match Regex::new(VTT_PATTERN) {
             Ok(result) => result,
             Err(_) => {
-                let error = FormatError::UnrecognizeableFormatting
+                let error = FormatError::UnrecognizeableFormatting;
                 panic!("{error}");
             }
         };
