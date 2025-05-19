@@ -29,7 +29,6 @@ pub fn parse_auto(input: &str) -> Result<Subtitle, Error> {
             let vttprs = VttParser;
             vttprs.parse(input)
         },
-        // TODO: Error handling, remove the srtparser later
         Err(error) => {
             panic!("{error}")
         }
