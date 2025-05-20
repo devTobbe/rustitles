@@ -17,7 +17,7 @@ pub mod format;
 pub use format::{SubFormat, Subtitle, Caption, sniff_format};
 
 /// Automatically detects the format of the file and returns a Result with 
-/// a Subtitle structure or an error.
+/// a Subtitle structure or an error. Returns a result with a Subtitle or Error.
 pub fn parse_auto(input: &str) -> Result<Subtitle, Error> {
     match sniff_format(input) {
         Ok(SubFormat::SRT) => {
