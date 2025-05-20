@@ -10,7 +10,6 @@ const ASS_PATTERN: &str = r"(?m)^Dialogue:\s*(?:|\w+\W)(?:Marked=\d+,\s*)?\d+,(?
 
 pub struct AssParser;
 
-// TODO: Error handling
 
 impl SubtitleParser for AssParser {
     // Parser logic for ASS files

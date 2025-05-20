@@ -10,7 +10,6 @@ const SRT_PATTERN: &str = r"(?m)^\d+?\n(\d{2}:\d{2}:\d{2}[.,]\d{3})\s+-->\s+(\d{
 
 pub struct SrtParser;
 
-// TODO: Error handling
 impl SubtitleParser for SrtParser {
     // Parser logic for SRT files
     fn parse(&self, input: &str) -> Result<Subtitle, Error> {

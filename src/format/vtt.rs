@@ -10,7 +10,6 @@ const VTT_PATTERN: &str = r"(?m)^(?:WEBVTT\s*\n{1,2})?^\d+\n(\d{2}:\d{2}:\d{2}[.
 
 pub struct VttParser;
 
-// TODO: Error handling
 impl SubtitleParser for VttParser {
     // Parser logic for VTT files
     fn parse(&self, input: &str) -> Result<Subtitle, Error> {
