@@ -28,6 +28,7 @@ A Rust crate for reading and working with subtitles — simple, clear, and gets 
 - [x] Simple tests
 - [x] Create basic library
 - [x] Proper error handling
+- [ ] Add test files
 
 ### Version 2
 - [ ] Customizable output
