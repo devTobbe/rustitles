@@ -21,14 +21,19 @@ impl SubtitleParser for VttParser {
                 panic!("{error}");
             }
         };
-        for caps in re.captures_iter(input) {
-            let caption = Caption::new(
-                caps[1].to_string(),
-                caps[2].to_string(),
-                caps[3].trim().to_string(),
-            );
-            subs.captions.push(caption);
-        }
-        Ok(subs)
+
+        let captions = re
+            .captures_iter(input)
+            .map(|caps| {
+                Caption::new(
+                    caps[1].to_string(),
+                    caps[2].to_string(),
+                    caps[3].trim().to_string(),
+                )
+            })
+            .collect();
+
+        Ok(Subtitle { captions })
+
     }
 }
