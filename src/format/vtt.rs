@@ -13,7 +13,7 @@ pub struct VttParser;
 impl SubtitleParser for VttParser {
     // Parser logic for VTT files
     fn parse(&self, input: &str) -> Result<Subtitle, Error> {
-        let mut subs = Subtitle::new();
+        let subs = Subtitle::new();
         let re = match Regex::new(VTT_PATTERN) {
             Ok(result) => result,
             Err(_) => {

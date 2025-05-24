@@ -75,7 +75,7 @@ This should just cause a lot of errors >:)
 
 #[cfg(test)]
 mod tests {
-    use std::result;
+    
 
     use rustitles::{
         format::model::{Caption, Subtitle},
