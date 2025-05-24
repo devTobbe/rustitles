@@ -13,7 +13,6 @@ pub struct AssParser;
 impl SubtitleParser for AssParser {
     // Parser logic for ASS files
     fn parse(&self, input: &str) -> Result<Subtitle, Error> {
-        let mut subs = Subtitle::new();
         let re = match Regex::new(ASS_PATTERN) {
             Ok(result) => result,
             Err(_) => {
@@ -22,16 +21,17 @@ impl SubtitleParser for AssParser {
             }
         };
 
-        for caps in re.captures_iter(input) {
-            let caption = Caption::new(
-                caps[1].to_string(),
-                caps[2].to_string(),
-                caps[3].trim().to_string(),
-            );
+        let captions = re
+            .captures_iter(input)
+            .map(|caps| {
+                Caption::new(
+                    caps[1].to_string(),
+                    caps[2].to_string(),
+                    caps[3].trim().to_string(),
+                )
+            })
+            .collect();
 
-            subs.captions.push(caption);
-        }
-
-        Ok(subs)
+        Ok(Subtitle { captions })
     }
 }
