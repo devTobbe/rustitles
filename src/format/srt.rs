@@ -13,7 +13,6 @@ pub struct SrtParser;
 impl SubtitleParser for SrtParser {
     // Parser logic for SRT files
     fn parse(&self, input: &str) -> Result<Subtitle, Error> {
-        //let mut subs = Subtitle::new();
         let re = match Regex::new(SRT_PATTERN) {
             Ok(result) => result,
             Err(_) => {
