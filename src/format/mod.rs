@@ -4,7 +4,7 @@ pub mod sniff;
 pub mod srt;
 pub mod vtt;
 
-pub use self::model::{SubFormat, Subtitle, Caption};
+pub use self::model::{Caption, SubFormat, Subtitle};
 pub use self::sniff::sniff_format;
 
 use std::io::Error;

@@ -69,7 +69,7 @@ Let's see if this works.
 Did it work..?
 ";
 
-const ERRDUMMY : &str = r"
+const ERRDUMMY: &str = r"
 This should just cause a lot of errors >:)
 ";
 
@@ -198,7 +198,6 @@ mod tests {
     #[test]
     #[should_panic]
     fn wrong_format_panic() {
-       let _ = parse_auto(&ERRDUMMY);
+        let _ = parse_auto(&ERRDUMMY);
     }
-
 }

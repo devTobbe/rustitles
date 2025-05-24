@@ -1,12 +1,11 @@
 use regex::Regex;
 
-use crate::format::model::SubFormat;
 use crate::format::model::FormatError;
+use crate::format::model::SubFormat;
 
 const SRT_SNIFF: &str = r"^\d+\r?\n\d+:\d+:\d+,\d+ --> \d+:\d+:\d+,\d+\r?\n";
 const VTT_SNIFF: &str = r"^WEBVTT";
 const ASS_SNIFF: &str = r"^\[Script Info\]";
-
 
 // Sniffs out the format of the inserted string pointer using detection regex
 pub fn sniff_format(input: &str) -> Result<SubFormat, FormatError> {

@@ -32,7 +32,10 @@ Hello, world!
 
 #[cfg(test)]
 mod tests {
-    use rustitles::format::{model::{FormatError, SubFormat}, sniff::sniff_format};
+    use rustitles::format::{
+        model::{FormatError, SubFormat},
+        sniff::sniff_format,
+    };
 
     use super::*;
 
@@ -41,7 +44,7 @@ mod tests {
         let result = sniff_format(&TESTSRT);
 
         assert_eq!(result.unwrap(), SubFormat::SRT);
-   }
+    }
 
     #[test]
     pub fn test_sniff_ass() {
@@ -61,6 +64,5 @@ mod tests {
     pub fn test_sniff_err() {
         let input = r"THIS SHOULD FAIL";
         assert_eq!(sniff_format(input), Err(FormatError::UnsupportedFormat));
-
     }
 }
