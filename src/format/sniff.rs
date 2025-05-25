@@ -24,5 +24,5 @@ pub fn sniff_format(input: &str) -> Result<SubFormat, FormatError> {
         return Ok(SubFormat::SRT);
     };
 
-    return Err(FormatError::UnsupportedFormat);
+    Err(FormatError::UnsupportedFormat)
 }
