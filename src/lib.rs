@@ -8,7 +8,7 @@ use format::{SubtitleParser, ass::AssParser, srt::SrtParser, vtt::VttParser};
 pub mod format;
 
 // Re-export for cleaner API
-pub use format::{Caption, SubFormat, Subtitle, sniff_format};
+pub use format::{model::SubFormat, model::Subtitle, sniff::sniff_format};
 
 /// Automatically detects the format of the file and returns a Result with
 /// a Subtitle structure or an error. Returns a result with a Subtitle or Error.
