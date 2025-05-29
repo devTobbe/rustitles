@@ -39,7 +39,7 @@ impl Display for FormatError {
 }
 
 // Structure for a subttile, which contains a vector of Captions
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Default)]
 pub struct Subtitle {
     pub captions: Vec<Caption>,
 }
@@ -47,11 +47,5 @@ pub struct Subtitle {
 impl Caption {
     pub fn new(start: String, end: String, text: String) -> Self {
         Self { start, end, text }
-    }
-}
-
-impl Subtitle {
-    pub fn new() -> Self {
-        Self { captions: vec![] }
     }
 }
